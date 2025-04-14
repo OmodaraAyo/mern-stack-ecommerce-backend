@@ -30,7 +30,7 @@ async function userSignUpController(req, res) {
 
     const payload = {
         ...req.body,
-        role : "user",
+        role : "USER",
         password:  hashPassword,
     }
 
@@ -45,7 +45,7 @@ async function userSignUpController(req, res) {
     })
 
   } catch (error) {
-    res.json({
+    res.status(500).json({
       message: error.message || error,
       error: true,
       success: false,

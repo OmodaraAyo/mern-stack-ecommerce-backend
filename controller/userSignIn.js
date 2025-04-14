@@ -16,7 +16,7 @@ async function userSignInController(req, res) {
     const user = await userModel.findOne({ email: email });
 
     if (!user) {
-      throw new Error("User not found");
+      throw new Error("Invalid username or password. Please try again.");
     }
 
     const checkPassword = await bcrypt.compare(password, user.password);
