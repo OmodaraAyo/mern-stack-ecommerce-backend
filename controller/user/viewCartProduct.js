@@ -6,7 +6,7 @@ const viewCartProduct = async (req, res) => {
 
     const cartItems = await addToCartModel.find({
       userId: currentUser,
-    });
+    }).populate("productId")
 
     res.status(200).json({
       data: cartItems,
