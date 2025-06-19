@@ -21,6 +21,7 @@ const viewCartProduct = require("../controller/user/viewCartProduct");
 const updateCartProductQuantity = require("../controller/user/updateCartProductQuantity");
 const deleteCartProductById = require("../controller/user/deleteCartProductById");
 const searchProduct = require("../controller/product/searchProduct");
+const filterProductController = require("../controller/product/filterProduct");
 
 router.post("/signup", userSignUpController);
 router.post("/signin", userSignInController);
@@ -42,7 +43,8 @@ router.post("/update-product", authToken, updateProductController);
 router.get("/get-product-category", getProductCategoryController);
 router.post("/get-all-product-category", getAllProductCategoriesController);
 router.post("/get-product-details", getProductDetailsController);
-router.get("/search", searchProduct)
+router.get("/search", searchProduct);
+router.post("/filter-product", filterProductController);
 
 //add To Cart
 router.post("/addToCart", authToken, addToCartController)
