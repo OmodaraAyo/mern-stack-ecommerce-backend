@@ -1,5 +1,5 @@
 const userModel = require("../../models/userModel");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 const saltRounds = 10;
 
 async function userSignUpController(req, res) {
